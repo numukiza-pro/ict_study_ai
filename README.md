@@ -1,0 +1,1 @@
+# ict_study_ai
