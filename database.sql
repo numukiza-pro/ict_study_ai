@@ -1,7 +1,3 @@
-CREATE DATABASE ict_study_ai;
-
-USE ict_study_ai;
-
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,

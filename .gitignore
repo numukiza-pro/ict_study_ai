@@ -1,0 +1,3 @@
+config/ai.local.php
+config/database.local.php
+.env

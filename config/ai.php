@@ -1,7 +1,12 @@
 <?php
 
-$apiKey = "key_vaCSPsRJUjAltUQ"; // Replace with your actual OpenAI API key
+$localConfig = __DIR__ . "/ai.local.php";
 
-$aiModel = "gpt-5.6-luna";
+if (is_file($localConfig)) {
+	require $localConfig;
+}
+
+$apiKey = $apiKey ?? getenv("OPENAI_API_KEY") ?: "";
+$aiModel = $aiModel ?? getenv("OPENAI_MODEL") ?: "gpt-4o-mini";
 
 ?>

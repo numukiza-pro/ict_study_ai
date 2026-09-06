@@ -1,9 +1,15 @@
 <?php
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "ict_study_ai";
+$localConfig = __DIR__ . "/database.local.php";
+
+if (is_file($localConfig)) {
+    require $localConfig;
+}
+
+$host = $host ?? getenv("DB_HOST") ?: "localhost";
+$username = $username ?? getenv("DB_USER") ?: "root";
+$password = $password ?? getenv("DB_PASSWORD") ?: "";
+$database = $database ?? getenv("DB_NAME") ?: "ict_study_ai";
 
 $conn = new mysqli($host, $username, $password, $database);
 
